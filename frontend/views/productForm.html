@@ -1,0 +1,7 @@
+<h2>{{ form.id ? 'Edit' : 'Add' }} Product</h2>
+<form ng-submit="form.id ? updateProduct() : addProduct()">
+  <input ng-model="form.name" placeholder="Name" required><br>
+  <input ng-model="form.price" placeholder="Price" required><br>
+  <button>{{ form.id ? 'Update' : 'Add' }}</button>
+</form>
+<a href="#!/products">Back to List</a>

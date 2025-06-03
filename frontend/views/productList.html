@@ -1,0 +1,18 @@
+<h2>Products</h2>
+<a href="#!/add">Add Product</a>
+<table border="1">
+  <tr><th>Name</th><th>Price</th><th>Actions</th></tr>
+  <tr ng-repeat="p in products">
+    <td>{{ p.name }}</td>
+    <td>{{ p.price }}</td>
+    <td>
+      <button ng-click="edit(p)">Edit</button>
+      <button ng-click="delete(p.id)">Delete</button>
+    </td>
+  </tr>
+</table>
+<div>
+  <button ng-disabled="page==1" ng-click="page=page-1; getProducts()">Previous</button>
+  Page {{ page }}
+  <button ng-disabled="products.length<5" ng-click="page=page+1; getProducts()">Next</button>
+</div>
